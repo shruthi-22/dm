@@ -112,22 +112,9 @@ class GSP:
 
 
 
-# class TestGSP(TestCase):
-    # @staticmethod
 def create_transactions(minsize, maxsize, minvalue, maxvalue):
     return [random.randint(minvalue, maxvalue) for _ in range(random.randint(minsize, maxsize))]
 
-def test_artificial_transactions():
-    minsize, maxsize, minvalue, maxvalue = 2, 256, 0, 5
-
-    transactions = [create_transactions(
-        minsize, maxsize, minvalue, maxvalue) for _ in range(10)]
-    result = GSP(transactions).search(0.3)
-    # print("========= Status =========")
-    # print("Transactions: {}".format(transactions))
-    print("GSP: {}".format(result))
-
-# def test_supermarket():
 if __name__ == "__main__" :
     transactions = [
         ['Bread', 'Milk'],
@@ -139,11 +126,4 @@ if __name__ == "__main__" :
     
     result = GSP(transactions).search(0.4)
      
-
-    # final = [{('Bread',): 4, ('Diaper',): 4, ('Milk',): 4, ('Beer',): 3, ('Coke',): 2},
-    #          {('Bread', 'Milk'): 3, ('Diaper', 'Beer'): 3, ('Milk', 'Diaper'): 3},
-    #          {('Bread', 'Milk', 'Diaper'): 2, ('Milk', 'Diaper', 'Beer'): 2}]
-    # print("========= Status =========")
-    # print("Transactions: {}".format(transactions))
     print("GSP: {}".format(result))
-    # assertEquals(result, final)
